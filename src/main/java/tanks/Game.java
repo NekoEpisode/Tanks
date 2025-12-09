@@ -25,6 +25,8 @@ import tanks.item.Item;
 import tanks.item.ItemBullet;
 import tanks.item.ItemMine;
 import tanks.item.ItemShield;
+import tanks.logging.AbstractLogger;
+import tanks.logging.ConsoleLogger;
 import tanks.minigames.ArcadeBeatBlocks;
 import tanks.minigames.ArcadeClassic;
 import tanks.minigames.Minigame;
@@ -293,7 +295,8 @@ public class Game
 	public LinkedHashMap<String, InputBindingGroup> inputBindings = new LinkedHashMap<>();
 	public InputBindings input;
 
-	public static PrintStream logger = System.err;
+	public static @Deprecated PrintStream oldLogger = System.err;
+    public static AbstractLogger logger = new ConsoleLogger();
 
 	public static String directoryPath = "/.tanks";
 
@@ -638,7 +641,7 @@ public class Game
 			try
 			{
 				game.fileManager.getFile(homedir + logPath).create();
-				Game.logger = new PrintStream(new FileOutputStream(homedir + logPath, true));
+				Game.oldLogger = new PrintStream(new FileOutputStream(homedir + logPath, true));
 			}
 			catch (IOException e)
 			{
@@ -736,12 +739,12 @@ public class Game
 
 		try
 		{
-			Game.logger = new PrintStream(new FileOutputStream (homedir + logPath, true));
+			Game.oldLogger = new PrintStream(new FileOutputStream (homedir + logPath, true));
 		}
 		catch (FileNotFoundException e)
 		{
-			Game.logger = System.err;
-			Game.logger.println(new Date() + " (syswarn) logfile not found despite existence of tanks directory! using stderr instead.");
+			Game.oldLogger = System.err;
+			Game.oldLogger.println(new Date() + " (syswarn) logfile not found despite existence of tanks directory! using stderr instead.");
 		}
 
 		BaseFile optionsFile = Game.game.fileManager.getFile(Game.homedir + Game.optionsPath);
@@ -1021,8 +1024,8 @@ public class Game
 		}
 
 		Game.crashTime = System.currentTimeMillis();
-		Game.logger.println(new Date() + " (syserr) the game has crashed! below is a crash report, good luck:");
-		e.printStackTrace(Game.logger);
+		Game.oldLogger.println(new Date() + " (syserr) the game has crashed! below is a crash report, good luck:");
+		e.printStackTrace(Game.oldLogger);
 
 		if (!(Game.screen instanceof ScreenCrashed))
 		{
@@ -1068,7 +1071,7 @@ public class Game
 		}
 		catch (Exception e1)
 		{
-			e1.printStackTrace(Game.logger);
+			e1.printStackTrace(Game.oldLogger);
 			e1.printStackTrace();
 		}
 

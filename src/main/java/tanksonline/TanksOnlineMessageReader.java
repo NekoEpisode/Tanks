@@ -76,9 +76,9 @@ public class TanksOnlineMessageReader
         catch (Exception e)
         {
             System.err.println("A network exception has occurred: " + e.toString());
-            Game.logger.println("A network exception has occurred: " + e.toString());
+            Game.oldLogger.println("A network exception has occurred: " + e.toString());
             e.printStackTrace();
-            e.printStackTrace(Game.logger);
+            e.printStackTrace(Game.oldLogger);
         }
 
         return reply;

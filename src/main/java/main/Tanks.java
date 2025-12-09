@@ -152,7 +152,7 @@ public class Tanks
                 "Crash details:\n" +
                 s.toString() + "\n";
 
-        Game.logger.println(errorMsg + "System properties:\n" + props + "\n");
+        Game.oldLogger.println(errorMsg + "System properties:\n" + props + "\n");
         System.err.println(errorMsg);
 
         if (props.toString().contains("Mac OS X"))

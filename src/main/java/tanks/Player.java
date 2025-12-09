@@ -145,15 +145,15 @@ public class Player
         {
             System.err.println("Failed to load saved crusade progress (log file includes contents): ");
             e.printStackTrace();
-            Game.logger.println("Failed to load saved crusade progress: ");
-            e.printStackTrace(Game.logger);
-            Game.logger.println("Progress file contents:");
+            Game.oldLogger.println("Failed to load saved crusade progress: ");
+            e.printStackTrace(Game.oldLogger);
+            Game.oldLogger.println("Progress file contents:");
 
             try
             {
                 f.startReading();
                 while (f.hasNextLine())
-                    Game.logger.println(f.nextLine());
+                    Game.oldLogger.println(f.nextLine());
             }
             catch (Exception e2)
             {

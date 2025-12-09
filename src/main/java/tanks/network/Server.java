@@ -56,7 +56,7 @@ public class Server
 		{
 			if (ScreenPartyHost.isServer)
 			{
-				e.printStackTrace(Game.logger);
+				e.printStackTrace(Game.oldLogger);
 				e.printStackTrace();
 				Game.screen = new ScreenHostingEnded(e.getLocalizedMessage());
 			}

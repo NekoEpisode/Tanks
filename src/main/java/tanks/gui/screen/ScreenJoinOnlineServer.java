@@ -81,7 +81,7 @@ public class ScreenJoinOnlineServer extends Screen
                             s.music = "menu_1.ogg";
                             Panel.forceRefreshMusic = true;
 
-                            e.printStackTrace(Game.logger);
+                            e.printStackTrace(Game.oldLogger);
                             e.printStackTrace();
                         }
                     }

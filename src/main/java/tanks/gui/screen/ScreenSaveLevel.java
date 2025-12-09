@@ -79,7 +79,7 @@ public class ScreenSaveLevel extends Screen implements ILevelPreviewScreen
                 }
                 catch (IOException e)
                 {
-                    e.printStackTrace(Game.logger);
+                    e.printStackTrace(Game.oldLogger);
                     e.printStackTrace();
                 }
             }

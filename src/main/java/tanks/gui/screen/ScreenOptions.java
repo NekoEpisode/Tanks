@@ -180,7 +180,7 @@ public class ScreenOptions extends Screen
 		}
 		catch (IOException e)
 		{
-			Game.logger.println (new Date().toString() + " (syserr) file permissions are broken! cannot initialize options file.");
+			Game.oldLogger.println (new Date().toString() + " (syserr) file permissions are broken! cannot initialize options file.");
 			System.exit(1);
 		}
 
@@ -565,8 +565,8 @@ public class ScreenOptions extends Screen
 		}
 		catch (Exception e)
 		{
-			Game.logger.println (new Date().toString() + " Options file is nonexistent or broken, using default:");
-			e.printStackTrace(Game.logger);
+			Game.oldLogger.println (new Date().toString() + " Options file is nonexistent or broken, using default:");
+			e.printStackTrace(Game.oldLogger);
 			System.err.println("Failed to load options!");
 			e.printStackTrace();
 		}

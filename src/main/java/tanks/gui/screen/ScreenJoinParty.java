@@ -1,7 +1,6 @@
 package tanks.gui.screen;
 
 import com.codedisaster.steamworks.SteamID;
-import com.codedisaster.steamworks.SteamMatchmaking;
 import com.codedisaster.steamworks.SteamNetworking;
 import tanks.Drawing;
 import tanks.Game;
@@ -9,7 +8,6 @@ import tanks.Panel;
 import tanks.gui.Button;
 import tanks.gui.TextBox;
 import tanks.network.Client;
-import tanks.network.SteamNetworkHandler;
 import tanks.network.event.EventSendClientDetails;
 
 import java.util.UUID;
@@ -276,7 +274,7 @@ public class ScreenJoinParty extends Screen
 
 						Panel.forceRefreshMusic = true;
 
-						e.printStackTrace(Game.logger);
+						e.printStackTrace(Game.oldLogger);
 						e.printStackTrace();
 					}
 				}

@@ -3301,7 +3301,7 @@ public class TankAIControlled extends Tank implements ITankField
 		}
 		catch (Exception e)
 		{
-			Game.logger.println("Failed to load tank: " + original);
+			Game.oldLogger.println("Failed to load tank: " + original);
 			System.err.println("Failed to load tank: " + original);
 			Game.exitToCrash(e);
 		}

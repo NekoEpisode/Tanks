@@ -138,7 +138,7 @@ public class ScreenCrusadeEditLevel extends Screen implements ILevelPreviewScree
                 }
                 catch (IOException e)
                 {
-                    e.printStackTrace(Game.logger);
+                    e.printStackTrace(Game.oldLogger);
                     e.printStackTrace();
                 }
             }

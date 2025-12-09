@@ -116,7 +116,7 @@ public class PlayerMap
         catch (Exception e)
         {
             e.printStackTrace();
-            Game.logger.println(players.toString());
+            Game.oldLogger.println(players.toString());
             System.out.println(players.toString());
         }
     }

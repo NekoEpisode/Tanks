@@ -122,16 +122,16 @@ public class MessageReader
 			if (s != null)
 			{
 				System.err.println("A network exception has occurred: " + e.toString() + " (" + s.rawUsername + "/" + s.clientID + ")");
-				Game.logger.println("A network exception has occurred: " + e.toString() + " (" + s.rawUsername + "/" + s.clientID + ")");
+				Game.oldLogger.println("A network exception has occurred: " + e.toString() + " (" + s.rawUsername + "/" + s.clientID + ")");
 			}
 			else
 			{
 				System.err.println("A network exception has occurred: " + e.toString());
-				Game.logger.println("A network exception has occurred: " + e.toString());
+				Game.oldLogger.println("A network exception has occurred: " + e.toString());
 			}
 
 			e.printStackTrace();
-			e.printStackTrace(Game.logger);
+			e.printStackTrace(Game.oldLogger);
 
 			if (ScreenPartyHost.isServer && s != null)
 			{
